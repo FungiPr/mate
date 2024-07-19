@@ -349,21 +349,18 @@ window.Quarto = {
 <section id="como-solucionar-inecuaciones-de-primer-grado-con-python-y-la-librería-sympy" class="level3">
 <h3 class="anchored" data-anchor-id="como-solucionar-inecuaciones-de-primer-grado-con-python-y-la-librería-sympy">Como solucionar inecuaciones de primer grado con Python y la librería sympy</h3>
 <p>Es posible representar la solución de una inecuación gráficamente. Por ejemplo, considere la inecuación: <span class="math display">\[3x+5&gt;2,\]</span> en la siguiente gráfica se muestra la solución de la inecuación, donde la región sombreada en azul representa la solución de la inecuación.</p>
-<div id="cell-17" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria3 <span class="im">as</span> li</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>li.plot_inequality_solution(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="modulo3_MMAF_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<div id="cell-17" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># URL del archivo</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/abelalv/PUJ_MMAF/main/libreria3.py"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Descargar el archivo</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'libreria3.py'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<p>Usando la función anterior podemos gráficar el conjunto de inecuaciones de la forma <span class="math display">\[ax+b&gt;c,\]</span> por ejemplo la inecuación <span class="math display">\[-3x+5&gt;2,\]</span></p>
-<div id="cell-19" class="cell" data-execution_count="2">
+<div id="cell-18" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria3 <span class="im">as</span> li</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>li.plot_inequality_solution(<span class="op">-</span><span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>li.plot_inequality_solution(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -372,46 +369,58 @@ window.Quarto = {
 </div>
 </div>
 </div>
+<p>Usando la función anterior podemos gráficar el conjunto de inecuaciones de la forma <span class="math display">\[ax+b&gt;c,\]</span> por ejemplo la inecuación <span class="math display">\[-3x+5&gt;2,\]</span></p>
+<div id="cell-20" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria3 <span class="im">as</span> li</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>li.plot_inequality_solution(<span class="op">-</span><span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="modulo3_MMAF_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>La librería sympy también permite resolver inecuaciones de una forma muy general, para ello debemos ingresar la inecuación en la función solve_univariate_inequality, y este nos devolverá el intervalo de la solución. Por ejemplo, para la inecuación</p>
 <p><span class="math display">\[3x+5&gt;2,\]</span></p>
-<div id="cell-21" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la variable</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sp.symbols(<span class="st">'x'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la inecuación</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>inequality <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>x <span class="op">+</span><span class="dv">5</span><span class="op">&gt;</span> <span class="dv">2</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Resolver la inecuación</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> sp.solve_univariate_inequality(inequality, x, relational<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la solución</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Solución sin relacional:"</span>, solution)</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-22" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la variable</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sp.symbols(<span class="st">'x'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la inecuación</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>inequality <span class="op">=</span> <span class="dv">3</span><span class="op">*</span>x <span class="op">+</span><span class="dv">5</span><span class="op">&gt;</span> <span class="dv">2</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Resolver la inecuación</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> sp.solve_univariate_inequality(inequality, x, relational<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la solución</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Solución sin relacional:"</span>, solution)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Solución sin relacional: -1 &lt; x</code></pre>
 </div>
 </div>
 <p>Observe otro ejemplo</p>
 <p><span class="math display">\[-3x+5 \leq2,\]</span></p>
-<div id="cell-23" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la variable</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sp.symbols(<span class="st">'x'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la inecuación</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>inequality <span class="op">=</span> <span class="op">-</span><span class="dv">3</span><span class="op">*</span>x<span class="op">+</span><span class="dv">5</span> <span class="op">&lt;=</span><span class="dv">2</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Resolver la inecuación</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> sp.solve_univariate_inequality(inequality, x, relational<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la solución</span></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Solución sin relacional:"</span>, solution)</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-24" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la variable</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sp.symbols(<span class="st">'x'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la inecuación</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>inequality <span class="op">=</span> <span class="op">-</span><span class="dv">3</span><span class="op">*</span>x<span class="op">+</span><span class="dv">5</span> <span class="op">&lt;=</span><span class="dv">2</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Resolver la inecuación</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> sp.solve_univariate_inequality(inequality, x, relational<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la solución</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Solución sin relacional:"</span>, solution)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Solución sin relacional: Interval.open(1, oo)</code></pre>
 </div>
@@ -419,21 +428,21 @@ window.Quarto = {
 <p><strong>Note</strong> que la solución de la inecuación anterior es <span class="math inline">\(x\geq1\)</span> y la solución exhibida por el programa es <code>Interval(1, oo)</code> lo que significa que la solución incluye el número real 1. Ahora, si se quiere resolver la inecuación</p>
 <p><span class="math display">\[-3x+5 &lt;2,\]</span></p>
 <p>usamos el programa</p>
-<div id="cell-25" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la variable</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sp.symbols(<span class="st">'x'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la inecuación</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>inequality <span class="op">=</span> <span class="op">-</span><span class="dv">3</span><span class="op">*</span>x<span class="op">+</span><span class="dv">5</span> <span class="op">&lt;</span><span class="dv">2</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Resolver la inecuación</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> sp.solve_univariate_inequality(inequality, x, relational<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la solución</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Solución sin relacional:"</span>, solution)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-26" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la variable</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sp.symbols(<span class="st">'x'</span>, real<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la inecuación</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>inequality <span class="op">=</span> <span class="op">-</span><span class="dv">3</span><span class="op">*</span>x<span class="op">+</span><span class="dv">5</span> <span class="op">&lt;</span><span class="dv">2</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Resolver la inecuación</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>solution <span class="op">=</span> sp.solve_univariate_inequality(inequality, x, relational<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la solución</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Solución sin relacional:"</span>, solution)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Solución sin relacional: Interval.open(1, oo)</code></pre>
 </div>
@@ -444,12 +453,12 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="solución-de-inecuaciones-de-segundo-grado-con-python-y-la-librería-sympy">Solución de inecuaciones de segundo grado con Python y la librería sympy</h3>
 <p>Es posible resolver las innecuaciones de segundo grado gráficamente, vamos a ver un ejemplo</p>
 <p><span class="math display">\[x^2-3x+2&gt;0,\]</span></p>
-<div id="cell-28" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>li.plot_inequality_solution2(<span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-29" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>li.plot_inequality_solution2(<span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="modulo3_MMAF_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="modulo3_MMAF_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -482,7 +491,7 @@ window.Quarto = {
 <p>La empresa está considerando la compra de estas máquinas, en la oferta se encontraron con dos proveedores de estas maquinarias. El primer proveedor se llama <strong>Interprase</strong> el cual ofrece un equipo que tiene un costo inicial de $1’000.000 y requiere un mantenimiento anual de $800.000. El segundo proveedor, llamado <strong>Soluciones Express</strong>, ofrece un equipo que tiene un costo inicial significativamente más alto de $8’000.000 y un mantenimiento anual de $110.000.</p>
 <p>¿Durante cuánto tiempo se debe utilizar el equipo de <strong>Soluciones Express</strong> para que los costos totales acumulados sean menores que el equipo de <strong>Interprase</strong>, asumiendo que los costos de mantenimiento se mantienen constantes en el tiempo?</p>
 <p>Para una decisión más completa, ¿qué otros factores deberían tenerse en cuenta además del costo inicial y el mantenimiento anual?</p>
-<p><a href="https://githubtocolab.com/abelalv/PUJ_MMAF/blob/main/modulo3_MMAF.ipynb">link</a>.</p>
+<p><a href="https://githubtocolab.com/abelalv/PUJ_MMAF/blob/main/modulo3_MMAF.ipynb">Link en Colab</a>.</p>
 
 
 </section>

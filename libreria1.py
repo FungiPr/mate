@@ -10,7 +10,7 @@ def multiplicar_fracciones(a, b, c, d):
     else:
         pro=(a*c)/(b*d)
         pro_str = str(pro)
-        print(f'             {a}      {c}        {a*c}',f'\n Producto    ----  +  ----  =    -----    ={pro_str}\n',f'            {b}      {d}        {d*b}')
+        print(f'             {a}      {c}        {a*c}',f'\n Producto    ----  *  ----  =    -----    ={pro_str}\n',f'            {b}      {d}        {d*b}')
     
 
 def sumar_fracciones(a, b, c, d):

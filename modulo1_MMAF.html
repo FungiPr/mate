@@ -371,15 +371,24 @@ window.Quarto = {
 <section id="suma-y-resta-1" class="level4">
 <h4 class="anchored" data-anchor-id="suma-y-resta-1">Suma y resta</h4>
 <p>La siguiente celda permite calcular la suma <span class="math display">\[\frac{a}{b} + \frac{c}{d}\]</span> cuando, de manera interactiva, se escogen los valores de <span class="math inline">\(a,b,c\)</span> y <span class="math inline">\(d\)</span>.</p>
-<div id="cell-38" class="cell" data-outputid="7bcbd7fb-4e5e-4d53-acd4-c69d853baaad" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria1 <span class="im">as</span> li</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># crear un widget interactivo para la gráfica</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>exp_widget <span class="op">=</span> widgets.interactive(li.sumar_fracciones, a<span class="op">=</span>li.a_slider, b<span class="op">=</span>li.b_slider, c<span class="op">=</span>li.c_slider, d<span class="op">=</span>li.d_slider)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el widget</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>display(exp_widget)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-38" class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># URL del archivo</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/abelalv/PUJ_MMAF/main/libreria1.py"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Descargar el archivo</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'libreria1.py'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-39" class="cell" data-outputid="7bcbd7fb-4e5e-4d53-acd4-c69d853baaad" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria1 <span class="im">as</span> li</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># crear un widget interactivo para la gráfica</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>exp_widget <span class="op">=</span> widgets.interactive(li.sumar_fracciones, a<span class="op">=</span>li.a_slider, b<span class="op">=</span>li.b_slider, c<span class="op">=</span>li.c_slider, d<span class="op">=</span>li.d_slider)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el widget</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>display(exp_widget)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"0c59a54a8adc4200aaba5a7ac3da1f5d","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -390,16 +399,16 @@ window.Quarto = {
 <section id="multiplicación-y-división-1" class="level4">
 <h4 class="anchored" data-anchor-id="multiplicación-y-división-1">Multiplicación y división</h4>
 <p>La siguiente celda permite calcular el producto <span class="math display">\[\frac{a}{b}\times \frac{c}{d}\]</span> cuando, de manera interactiva, se escogen los valores de <span class="math inline">\(a,b,c\)</span> y <span class="math inline">\(d\)</span>.</p>
-<div id="cell-41" class="cell" data-outputid="c8454a47-c615-4c16-d014-4e82f5eb0efd" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria1 <span class="im">as</span> li</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un widget interactivo para la gráfica</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>exp_widget <span class="op">=</span> widgets.interactive(li.multiplicar_fracciones, a<span class="op">=</span>li.a_slider, b<span class="op">=</span>li.b_slider, c<span class="op">=</span>li.c_slider,d<span class="op">=</span>li.d_slider)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el widget</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>display(exp_widget)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-42" class="cell" data-outputid="c8454a47-c615-4c16-d014-4e82f5eb0efd" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria1 <span class="im">as</span> li</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un widget interactivo para la gráfica</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>exp_widget <span class="op">=</span> widgets.interactive(li.multiplicar_fracciones, a<span class="op">=</span>li.a_slider, b<span class="op">=</span>li.b_slider, c<span class="op">=</span>li.c_slider,d<span class="op">=</span>li.d_slider)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el widget</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>display(exp_widget)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"2ec2e68b174e416b868912b8a9b40ca2","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -481,8 +490,8 @@ window.Quarto = {
 <li>¿Cuántas ardillas se alimentan principalmente de frutas? Exprese la respuesta en notación científica con exactamente 2 cifras decimales.</li>
 </ol>
 <p><strong>Respuesta.</strong> El 35% de la población de las ardillas que alimenta principalmente de frutas. Es decir, <span class="math inline">\(0.35\)</span> de <span class="math inline">\(1.237 \times 10^4\)</span> ardillas se alimentan principalmente de frutas. En total, son <span class="math inline">\(4330\)</span> ardillas, aproximadamente, las que cumplen con la condición dada.</p>
-<div id="cell-49" class="cell" data-outputid="bf96c99a-d51c-44bd-e94e-852336983c5f" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="sc">{0:.2e}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="fl">0.35</span><span class="op">*</span><span class="fl">1.237e4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-50" class="cell" data-outputid="bf96c99a-d51c-44bd-e94e-852336983c5f" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="sc">{0:.2e}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="fl">0.35</span><span class="op">*</span><span class="fl">1.237e4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>4.33e+03</code></pre>
 </div>
@@ -496,7 +505,7 @@ window.Quarto = {
 <li><p>¿Cuántas ardillas tienen una dieta variada? Exprese la respuesta en notación científica con exactamente 2 cifras decimales y también como un número fraccionario.</p></li>
 <li><p>¿Cuál es el consumo diario total de comida para cada grupo de ardillas? Exprese las cantidades en notación científica con exactamente 3 cifras decimales y también como un número fraccionario.</p></li>
 </ol>
-<p><a href="https://githubtocolab.com/abelalv/PUJ_MMAF/blob/main/modulo1_MMAF.ipynb">link</a>.</p>
+<p><a href="https://githubtocolab.com/abelalv/PUJ_MMAF/blob/main/modulo1_MMAF.ipynb">Link en Colab</a>.</p>
 
 
 </section>

@@ -491,32 +491,23 @@ window.Quarto = {
 <section id="graficando-funciones-lineales" class="level3">
 <h3 class="anchored" data-anchor-id="graficando-funciones-lineales">Graficando funciones lineales</h3>
 <p>Combinando las herramientas presentadas anteriormente, es posible graficar la recta que une dos puntos en el plano cartesiano, para cualquier par de puntos dados, es decir, dados <span class="math inline">\((x_1,y_1)\)</span> y <span class="math inline">\((x_2,y_2)\)</span>, queremos obtener la recta que pasa por estos dos puntos con la ecuación <span class="math inline">\(y = mx + b\)</span>, donde <span class="math inline">\(m\)</span> es la pendiente de la recta y <span class="math inline">\(b\)</span> es la ordenada al origen.</p>
-<div id="cell-34" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria4 <span class="im">as</span> li</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir los puntos</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>punto1 <span class="op">=</span> (<span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>punto2 <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="dv">7</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función para graficar la recta</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>li.grafica_recta(punto1, punto2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="modulo4_MMAF_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<div id="cell-34" class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># URL del archivo</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/abelalv/PUJ_MMAF/main/libreria4.py"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Descargar el archivo</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'libreria4.py'</span>, <span class="st">'w'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<p>Ahora bien, si usamos la forma punto pendiente , es decir <span class="math inline">\(y-y_0=m(x-x_0)\)</span>, donde <span class="math inline">\((x_0,y_0)\)</span> es un punto en la recta, podemos graficar la recta correspondiente a la pendiente dada <span class="math inline">\(m\)</span> y el punto dado <span class="math inline">\((x_0,y_0)\)</span>.</p>
-<div id="cell-36" class="cell" data-execution_count="11">
+<div id="cell-35" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria4 <span class="im">as</span> li</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la pendiente y el punto</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>pendiente <span class="op">=</span> <span class="op">-</span><span class="dv">4</span><span class="op">/</span><span class="dv">3</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>punto <span class="op">=</span> (<span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función para graficar la recta</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>li.grafica_recta_pendiente_punto(pendiente, punto)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir los puntos</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>punto1 <span class="op">=</span> (<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>punto2 <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="dv">7</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función para graficar la recta</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>li.grafica_recta(punto1, punto2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -525,19 +516,16 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Dadas dos rectas <span class="math inline">\(y = m_1x + b_1\)</span> y <span class="math inline">\(y = m_2x + b_2\)</span>, es posible graficarlas en un mismo plano cartesiano, para ello se puede usar el siguiente código:</p>
-<div id="cell-38" class="cell" data-execution_count="12">
+<p>Ahora bien, si usamos la forma punto pendiente , es decir <span class="math inline">\(y-y_0=m(x-x_0)\)</span>, donde <span class="math inline">\((x_0,y_0)\)</span> es un punto en la recta, podemos graficar la recta correspondiente a la pendiente dada <span class="math inline">\(m\)</span> y el punto dado <span class="math inline">\((x_0,y_0)\)</span>.</p>
+<div id="cell-37" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria4 <span class="im">as</span> li</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir las pendientes y los puntos</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>pendiente1 <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>punto1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">3</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>pendiente2 <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="dv">2</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>punto2 <span class="op">=</span> (<span class="dv">2</span>, <span class="op">-</span><span class="dv">2</span>)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función para graficar ambas rectas</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>li.grafica_dos_rectas(pendiente1, punto1, pendiente2, punto2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la pendiente y el punto</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>pendiente <span class="op">=</span> <span class="op">-</span><span class="dv">4</span><span class="op">/</span><span class="dv">3</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>punto <span class="op">=</span> (<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función para graficar la recta</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>li.grafica_recta_pendiente_punto(pendiente, punto)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -546,24 +534,19 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</section>
-<section id="graficando-funciones-cuadráticas" class="level3">
-<h3 class="anchored" data-anchor-id="graficando-funciones-cuadráticas">Graficando funciones cuadráticas</h3>
-<p>Así como fue posible graficar funciones lineales, es posible realizar la misma tarea para el caso de funciones cuadráticas. Recuerde que una función cuadrática tiene la forma <span class="math inline">\(f(x) = ax^2 + bx + c\)</span>, donde <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> y <span class="math inline">\(c\)</span> son constantes, <span class="math inline">\(a\neq 0\)</span>. Usaremos la función cuadrática para exhibir otra alternativa a la graficación de funciones en Python que vincula el paquete <code>sympy</code> que se ha usado en módulos anteriores</p>
-<div id="cell-41" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy.plotting <span class="im">import</span> plot</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la variable</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sp.symbols(<span class="st">'x'</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la función cuadrática, por ejemplo: f(x) = x^2 + 2x + 1</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">1</span></span>
+<p>Dadas dos rectas <span class="math inline">\(y = m_1x + b_1\)</span> y <span class="math inline">\(y = m_2x + b_2\)</span>, es posible graficarlas en un mismo plano cartesiano, para ello se puede usar el siguiente código:</p>
+<div id="cell-39" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria4 <span class="im">as</span> li</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir las pendientes y los puntos</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>pendiente1 <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>punto1 <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">3</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>pendiente2 <span class="op">=</span> <span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="dv">2</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>punto2 <span class="op">=</span> (<span class="dv">2</span>, <span class="op">-</span><span class="dv">2</span>)</span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficar la función</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> plot(f, show<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>p.show()</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función para graficar ambas rectas</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>li.grafica_dos_rectas(pendiente1, punto1, pendiente2, punto2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -572,26 +555,24 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>En este caso, la función presentada <span class="math inline">\(f(x) = x^2 + 2x + 1\)</span> es tratada como una entidad simbólica como las que se usaron al momento de resolver ecuaciones y desigualdades con <code>sympy</code> en módulos previos. El llamado a <code>sympy.ploting</code> permite cargar herramientas de graficación de funciones simbólicas en Python</p>
-<p>En el caso de querer usar Matplotlib para graficar la función cuadrática, se puede usar el siguiente código:</p>
-<div id="cell-44" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+</section>
+<section id="graficando-funciones-cuadráticas" class="level3">
+<h3 class="anchored" data-anchor-id="graficando-funciones-cuadráticas">Graficando funciones cuadráticas</h3>
+<p>Así como fue posible graficar funciones lineales, es posible realizar la misma tarea para el caso de funciones cuadráticas. Recuerde que una función cuadrática tiene la forma <span class="math inline">\(f(x) = ax^2 + bx + c\)</span>, donde <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> y <span class="math inline">\(c\)</span> son constantes, <span class="math inline">\(a\neq 0\)</span>. Usaremos la función cuadrática para exhibir otra alternativa a la graficación de funciones en Python que vincula el paquete <code>sympy</code> que se ha usado en módulos anteriores</p>
+<div id="cell-42" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy.plotting <span class="im">import</span> plot</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar valores de x</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">400</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la variable</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sp.symbols(<span class="st">'x'</span>)</span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluar la función cuadrática directamente</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir la función cuadrática, por ejemplo: f(x) = x^2 + 2x + 1</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficar</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, label<span class="op">=</span><span class="st">'$f(x) = x^2 + 2x + 1$'</span>)</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'f(x)'</span>)</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Gráfica de la función cuadrática'</span>)</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficar la función</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> plot(f, show<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>p.show()</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -600,16 +581,26 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Como en el caso de una función lineal, en la que basta con dos puntos , o la pendiente y un punto para trazar la recta, en el caso de una función cuadrática, basta con tres puntos (siempre y cuando estos puntos no estén sobre una misma recta) o el coeficiente principal y un punto para trazar la parábola. En el siguiente código se muestra como graficar una parábola dados 3 puntos.</p>
-<div id="cell-46" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria4 <span class="im">as</span> li</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir los tres puntos</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>punto1 <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>punto2 <span class="op">=</span> (<span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>punto3 <span class="op">=</span> (<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<p>En este caso, la función presentada <span class="math inline">\(f(x) = x^2 + 2x + 1\)</span> es tratada como una entidad simbólica como las que se usaron al momento de resolver ecuaciones y desigualdades con <code>sympy</code> en módulos previos. El llamado a <code>sympy.ploting</code> permite cargar herramientas de graficación de funciones simbólicas en Python</p>
+<p>En el caso de querer usar Matplotlib para graficar la función cuadrática, se puede usar el siguiente código:</p>
+<div id="cell-45" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar valores de x</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">400</span>)</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función para graficar la parábola</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>li.grafica_parabola(punto1, punto2, punto3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluar la función cuadrática directamente</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficar</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, label<span class="op">=</span><span class="st">'$f(x) = x^2 + 2x + 1$'</span>)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'f(x)'</span>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Gráfica de la función cuadrática'</span>)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -618,15 +609,16 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Si se quiere graficar una parábola en forma canónica (es decir, en la forma <span class="math inline">\(f(x) = a(x-h)^2 + k\)</span>), se puede usar el siguiente código</p>
-<div id="cell-48" class="cell" data-execution_count="16">
+<p>Como en el caso de una función lineal, en la que basta con dos puntos , o la pendiente y un punto para trazar la recta, en el caso de una función cuadrática, basta con tres puntos (siempre y cuando estos puntos no estén sobre una misma recta) o el coeficiente principal y un punto para trazar la parábola. En el siguiente código se muestra como graficar una parábola dados 3 puntos.</p>
+<div id="cell-47" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria4 <span class="im">as</span> li</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>coef_principal <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>h<span class="op">=</span><span class="dv">2</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>k<span class="op">=</span><span class="dv">3</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función para graficar la parábola</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>li.grafica_parabola_can(coef_principal, h, k)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir los tres puntos</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>punto1 <span class="op">=</span> (<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>punto2 <span class="op">=</span> (<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>punto3 <span class="op">=</span> (<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función para graficar la parábola</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>li.grafica_parabola(punto1, punto2, punto3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -635,33 +627,50 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>En las siguientes dos celdas puedes ajustar los valores de <span class="math inline">\(a\)</span>, <span class="math inline">\(h\)</span> y <span class="math inline">\(k\)</span> para observar como cambia la gráfica de la parábola en el caso de la forma canónica y también los valores de <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> y <span class="math inline">\(c\)</span> para observar como cambia la gráfica de la parábola en el caso de la forma general.</p>
-<div id="cell-50" class="cell" data-execution_count="17">
+<p>Si se quiere graficar una parábola en forma canónica (es decir, en la forma <span class="math inline">\(f(x) = a(x-h)^2 + k\)</span>), se puede usar el siguiente código</p>
+<div id="cell-49" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria4 <span class="im">as</span> li</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets </span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un widget interactivo para la gráfica</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>parabola_widget <span class="op">=</span> widgets.interactive(li.update_grafica, a<span class="op">=</span>li.a_slider, h<span class="op">=</span>li.h_slider, k<span class="op">=</span>li.k_slider)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el widget</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>display(parabola_widget)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>coef_principal <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>h<span class="op">=</span><span class="dv">2</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>k<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función para graficar la parábola</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>li.grafica_parabola_can(coef_principal, h, k)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="modulo4_MMAF_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En las siguientes dos celdas puedes ajustar los valores de <span class="math inline">\(a\)</span>, <span class="math inline">\(h\)</span> y <span class="math inline">\(k\)</span> para observar como cambia la gráfica de la parábola en el caso de la forma canónica y también los valores de <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> y <span class="math inline">\(c\)</span> para observar como cambia la gráfica de la parábola en el caso de la forma general.</p>
+<div id="cell-51" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria4 <span class="im">as</span> li</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un widget interactivo para la gráfica</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>parabola_widget <span class="op">=</span> widgets.interactive(li.update_grafica, a<span class="op">=</span>li.a_slider, h<span class="op">=</span>li.h_slider, k<span class="op">=</span>li.k_slider)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el widget</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>display(parabola_widget)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"f54691806a314cb68a2273b9a18896fa","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
-<div id="cell-51" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria4 <span class="im">as</span> li</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un widget interactivo para la gráfica</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>cuadratica_widget <span class="op">=</span> widgets.interactive(li.update_grafica_cuad, a<span class="op">=</span>li.a_slider, b<span class="op">=</span>li.b_slider, c<span class="op">=</span>li.c_slider)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el widget</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>display(cuadratica_widget)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-52" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libreria4 <span class="im">as</span> li</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un widget interactivo para la gráfica</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>cuadratica_widget <span class="op">=</span> widgets.interactive(li.update_grafica_cuad, a<span class="op">=</span>li.a_slider, b<span class="op">=</span>li.b_slider, c<span class="op">=</span>li.c_slider)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el widget</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>display(cuadratica_widget)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"93f1e9d530954690a11c5c41245e55be","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -705,7 +714,7 @@ window.Quarto = {
 <li><p>Si la función <span class="math inline">\(T(t)\)</span> es ahora de la forma <span class="math inline">\(T(t)=1-2t+4t^2\)</span>, determine el tiempo en que el grosor del material protector es de 1 <span class="math inline">\(mm\)</span>.</p></li>
 <li><p>Considerando el punto 5, determine el tiempo en que el grosor del material protector llega a su grosor más pequeño. Grafique y compare su solución con el punto 4.</p></li>
 </ol>
-<p><a href="https://githubtocolab.com/abelalv/PUJ_MMAF/blob/main/modulo4_MMAF.ipynb">link</a>.</p>
+<p><a href="https://githubtocolab.com/abelalv/PUJ_MMAF/blob/main/modulo4_MMAF.ipynb">Link en Colab</a>.</p>
 
 
 </section>
